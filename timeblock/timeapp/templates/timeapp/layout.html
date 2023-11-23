@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <nav>
+            <a href="#">Schedule</a>
+            <a href="#">Tasks</a>
+            <a href="{% url 'timeapp:create' %}">Add Task</a>
+        </nav>
+    </head>
+    <body>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>
