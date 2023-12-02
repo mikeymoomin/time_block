@@ -22,3 +22,12 @@ def add_task(request):
 def task_list(request):
     tasks = Items.objects.all()
     return render(request, 'timeapp/task_list.html', {'tasks': tasks})
+
+def matrix(request):
+    tasks = {
+        'urgent_important': Items.objects.filter(urgent=True, important=True),
+        'urgent_not_important': Items.objects.filter(urgent=True, important=False),
+        'not_urgent_important': Items.objects.filter(urgent=False, important=True),
+        'not_urgent_not_important': Items.objects.filter(urgent=False, important=False),
+    }
+    return render(request, 'timeapp/matrix.html', {'tasks': tasks})
