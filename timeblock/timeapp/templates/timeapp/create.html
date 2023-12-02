@@ -1,9 +1,9 @@
 {% extends "timeapp/layout.html" %}
 {% block body %}
-    <head>
-        <title>Create New Task</title>
-    </head>
-    <body>
-        <h1>Form to go here</h1>
-    </body>
+    <h2>Add Task</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Task</button>
+    </form>
 {% endblock %}
