@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <nav>
-            <a href="#">Schedule</a>
-            <a href="{% url 'timeapp:task_list' %}">Tasks</a>
-            <a href="{% url 'timeapp:add_task' %}">Add Task</a>
-            <a href="{% url 'timeapp:matrix' %}">Eisenhower Matrix</a>
-        </nav>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'timeapp/styles.css' %}" />
     </head>
     <body>
+        <nav>
+            <div class="icon">
+                <img src="{% static 'timeapp/icon.png' %}">
+            </div>
+            <div class="navbar">
+                <a href="#">Schedule</a>
+                <a href="{% url 'timeapp:task_list' %}">Tasks</a>
+                <a href="{% url 'timeapp:add_task' %}">Add Task</a>
+                <a href="{% url 'timeapp:matrix' %}">Eisenhower Matrix</a>
+            </div>
+        </nav>
         {% block body %}
         {% endblock %}
     </body>
